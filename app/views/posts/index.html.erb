@@ -1,2 +1,35 @@
-<h1>Posts#index</h1>
-<p>Find me in app/views/posts/index.html.erb</p>
+<% content_for :left_column do %>
+<table style="width: 90%">
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Author</th>
+    </tr>
+    <% @posts.each do |post| %>
+    <tr>
+        <td><%= post.title %></td>
+        <td><%= post.content %></td>
+        <td>name</td>
+    </tr>
+    <% end %>
+
+</table>
+
+<% end %>
+
+
+<% content_for :middle_column do %>
+    <form action="">
+        Title
+        <br>
+        <input type="text">
+        <br>
+        Content
+        <br>
+        <input type="text">
+        <br><br>
+        <input type="submit" value="submit">
+        <br>
+    </form>
+    <button>All Posts</button>
+<% end %>

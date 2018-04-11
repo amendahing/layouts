@@ -1,2 +1,36 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<% content_for :left_column do %>
+    <table style="width: 90%">
+        <tr>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Favorite Language</th>
+        </tr>
+        <% @users.each do |user| %>
+        <tr>
+            <td><%= user.first_name %></td>
+            <td><%= user.last_name %></td>
+            <td><%= user.favorite_language %></td>
+        </tr>
+        <% end %>
+    </table>
+<% end %>
+
+<% content_for :right_column do %>
+    <form action="">
+        First Name
+        <br>
+        <input type="text">
+        <br>
+        Last Name
+        <br>
+        <input type="text">
+        <br>
+        Favorite Language
+        <br>
+        <input type="text">
+        <br><br>
+        <input type="submit" value="submit">
+        <br>
+    </form>
+    <button>All Posts</button>
+<% end %>
