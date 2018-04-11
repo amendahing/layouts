@@ -14,7 +14,6 @@
     <% end %>
 
 </table>
-
 <% end %>
 
 
@@ -28,8 +27,20 @@
         <br>
         <input type="text">
         <br><br>
+        Author
+        <select name="" id="">
+            <% @users.each do |user|%>
+            <option value="<%= user.id%>"> <%= user.first_name%> <%= user.last_name%> </option>
+            <% end %>
+        </select>
+        <br><br>
         <input type="submit" value="submit">
-        <br>
+
     </form>
-    <button>All Posts</button>
+<% end %>
+
+
+<% content_for :right_column do %>
+    <a href="/"><button>All Users</button></a>
+
 <% end %>
